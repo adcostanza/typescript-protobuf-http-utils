@@ -1,13 +1,13 @@
 {
   "name": "typescript-http-protobuf-utils",
   "scripts": {
-    "models": "./node_modules/.bin/rxjs-grpc -o generated/protos.ts protos/*.proto",
-    "service": "npx ts-node src/index.ts protos generated",
+    "models": "./node_modules/.bin/rxjs-grpc -o src/generated/protos.ts protos/*.proto",
+    "service": "npx ts-node src/index.ts protos src/generated",
     "generate": "npm run models && npm run service"
   },
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "HTTP JSON Client utilities for protobuf backed typesafe API",
-  "main": "Generator.ts",
+  "main": "index.ts",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.18.0",
