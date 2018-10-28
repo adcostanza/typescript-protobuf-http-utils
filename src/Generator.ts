@@ -1,5 +1,6 @@
 import * as handlebars from "handlebars";
 import * as fs from "fs";
+import * as path from "path";
 
 interface RpcRoute {
     name: string;
@@ -77,9 +78,11 @@ const parseProtoFile = (filePath: string, packageLocation: string): HttpClientPa
     };
 };
 
+const templateFile = __dirname + '/HttpClient.template';
+
 const createHttpClient = (httpClientParams: HttpClientParams, generatedDirectory: string) => {
     //Now generate HttpClient
-    const text = fs.readFileSync("./src/templates/HttpClient.ts", "utf-8");
+    const text = fs.readFileSync(templateFile, "utf-8");
 
     const template = handlebars.compile(text);
     console.log(template(httpClientParams));
@@ -94,8 +97,8 @@ const createHttpClient = (httpClientParams: HttpClientParams, generatedDirectory
 export const processArgs = (): Directories => {
     //check for args
     if (process.argv.length <= 3) {
-        console.log("Usage: " + __filename + "<.proto directory> <generated directory>");
-        console.log("Example: " + __filename + "protos generated");
+        console.log("Usage: generate <.proto directory> <generated directory>");
+        console.log("Example: generate protos src/generated");
         process.exit(-1);
     }
 
