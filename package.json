@@ -4,7 +4,7 @@
     "models": "./node_modules/.bin/rxjs-grpc -o src/generated/protos.ts protos/*.proto",
     "service": "ts-node src/index.ts protos src/generated",
     "generate": "npm run models && npm run service",
-    "build": "webpack --display-error-details"
+    "build": "cp src/templates/*.template dist/ && webpack --display-error-details"
   },
   "bin": {
     "generate": "./bin/generate"
