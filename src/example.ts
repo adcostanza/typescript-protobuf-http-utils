@@ -3,7 +3,7 @@
 // //See https://github.com/adcostanza/protobuf-http-utils/tree/master/example
 // //for the server implementation
 //
-// const todoClient = new TodoClient();
+// const todoClient = new TodoClient("http://localhost:4567");
 //
 // const token = "WNwqY5OngUNv3sioM68z46kA";
 // //auth protected route call with token, added as Authorization header
