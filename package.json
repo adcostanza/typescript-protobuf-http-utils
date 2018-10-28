@@ -1,15 +1,12 @@
 {
   "name": "http-protobuf-utils",
   "scripts": {
-    "models": "./node_modules/.bin/rxjs-grpc -o src/generated/protos.ts protos/*.proto",
-    "service": "ts-node src/index.ts protos src/generated",
-    "generate": "npm run models && npm run service",
     "build": "cp src/templates/*.template dist/ && webpack --display-error-details"
   },
   "bin": {
     "generate": "./bin/generate"
   },
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "HTTP JSON Client utilities for protobuf backed typesafe API",
   "main": "index.ts",
   "license": "MIT",
