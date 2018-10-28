@@ -1,4 +1,4 @@
-# TypeScfript HTTP Protobuf Utils
+# TypeScript HTTP Protobuf Utils
 This is a companion to the Java API JSON HTTP Utils I posted here https://github.com/adcostanza/protobuf-http-utils
 
 More documentation to come shortly.
