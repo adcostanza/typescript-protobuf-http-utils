@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["es2017", "dom"],
+    "strict": true,
+    "rootDir": "./src",
+    "outDir": "./build",
+    "allowJs": true,
+    "noImplicitAny": false,
+    "skipLibCheck": true
+  }
+}
