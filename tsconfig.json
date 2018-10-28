@@ -1,13 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
     "module": "commonjs",
-    "lib": ["es2017", "dom"],
-    "strict": true,
-    "rootDir": "./src",
-    "outDir": "./build",
-    "allowJs": true,
-    "noImplicitAny": false,
-    "skipLibCheck": true
-  }
+    "target": "es6",
+    "experimentalDecorators": true
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "./node_modules/**/*"
+  ]
 }

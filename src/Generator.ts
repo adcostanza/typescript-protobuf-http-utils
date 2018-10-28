@@ -77,9 +77,11 @@ const parseProtoFile = (filePath: string, packageLocation: string): HttpClientPa
     };
 };
 
+const templateFile = "./src/templates/HttpClient.template";
+
 const createHttpClient = (httpClientParams: HttpClientParams, generatedDirectory: string) => {
     //Now generate HttpClient
-    const text = fs.readFileSync("./src/templates/HttpClient.ts", "utf-8");
+    const text = fs.readFileSync(templateFile, "utf-8");
 
     const template = handlebars.compile(text);
     console.log(template(httpClientParams));
