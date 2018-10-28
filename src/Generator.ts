@@ -78,7 +78,7 @@ const parseProtoFile = (filePath: string, packageLocation: string): HttpClientPa
     };
 };
 
-const templateFile = process.cwd() + '/dist/HttpClient.template';
+const templateFile = __dirname + '/HttpClient.template';
 
 const createHttpClient = (httpClientParams: HttpClientParams, generatedDirectory: string) => {
     //Now generate HttpClient

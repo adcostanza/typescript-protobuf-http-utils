@@ -7,6 +7,10 @@ module.exports = {
     },
 
     "target": "node",
+    node: {
+        __dirname: false,
+        __filename: false,
+    },
 
     // Enable sourcemaps for debugging webpack's output.
     devtool: "#inline-source-map",
