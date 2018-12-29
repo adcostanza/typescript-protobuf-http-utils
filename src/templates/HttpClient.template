@@ -1,15 +1,14 @@
 import {Observable} from 'rxjs'
 import { {{packageName}} } from "{{packageLocation}}";
-import {{serviceName}} = {{packageName}}.{{serviceName}}
 
 import Axios from "axios";
 
 type FirstArgument<T> = T extends (arg1: infer U, ...args: any[]) => any ? U : any;
 
 export class {{clientName}} {
-    call<T extends keyof {{serviceName}},
-            R = ReturnType<{{serviceName}}[T]>>
-        (name: T, body: FirstArgument<{{serviceName}}[T]>, token?: string): Observable<R> {
+    call<T extends keyof {{packageName}}.{{serviceName}},
+            R = ReturnType<{{packageName}}.{{serviceName}}[T]>>
+        (name: T, body: FirstArgument<{{packageName}}.{{serviceName}}[T]>, token?: string): Observable<R> {
             let options = {};
             if(token !== undefined) {
                 options = { headers: { Authorization: token } };
