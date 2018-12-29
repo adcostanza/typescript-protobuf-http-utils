@@ -9,12 +9,21 @@ export class {{clientName}} {
     call<T extends keyof {{packageName}}.{{serviceName}},
             R = ReturnType<{{packageName}}.{{serviceName}}[T]>>
         (name: T, body: FirstArgument<{{packageName}}.{{serviceName}}[T]>, token?: string): Observable<R> {
+    private baseURL: string = "";
+
+    constructor(baseURL: string) {
+        this.baseURL = baseURL;
+    }
+
+    call<T extends keyof {{serviceName}},
+            R = ReturnType<{{serviceName}}[T]>>
+        (name: T, body: FirstArgument<{{serviceName}}[T]>, token?: string): Observable<R> {
             let options = {};
             if(token !== undefined) {
                 options = { headers: { Authorization: token } };
             }
             return Observable.create((observer) => {
-                Axios.post('http://localhost:4567/' + name, body, options)
+                Axios.post(this.baseURL + "/" + name, body, options)
                     .then((resp) => {
                             if (resp.status == 200) {
                                 observer.next(resp.data);
