@@ -1,4 +1,4 @@
-import {Observable} from 'rxjs'
+import {Observable} from 'rxjs/Observable'
 import { {{packageName}} } from "{{packageLocation}}";
 
 import Axios from "axios";
