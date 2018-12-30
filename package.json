@@ -6,7 +6,7 @@
   "bin": {
     "generate": "./bin/generate"
   },
-  "version": "0.0.15",
+  "version": "0.0.18",
   "description": "HTTP JSON Client utilities for protobuf backed typesafe API",
   "main": "index.ts",
   "license": "MIT",

@@ -1,4 +1,4 @@
-import {Observable} from 'rxjs'
+import {Observable} from "rxjs/Observable";
 import { {{packageName}} } from "{{packageLocation}}";
 
 import Axios from "axios";
@@ -11,7 +11,7 @@ export class {{clientName}} {
     constructor(baseURL: string) {
         this.baseURL = baseURL;
     }
-    
+
     call<T extends keyof {{packageName}}.{{serviceName}},
             R = ReturnType<{{packageName}}.{{serviceName}}[T]>>
         (name: T, body: FirstArgument<{{packageName}}.{{serviceName}}[T]>, token?: string): Observable<R> {
