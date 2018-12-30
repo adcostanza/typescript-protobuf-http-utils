@@ -1,4 +1,4 @@
-import {Observable} from 'rxjs/Observable'
+import {Observable} from "rxjs/Observable";
 import { {{packageName}} } from "{{packageLocation}}";
 
 import Axios from "axios";
@@ -6,18 +6,15 @@ import Axios from "axios";
 type FirstArgument<T> = T extends (arg1: infer U, ...args: any[]) => any ? U : any;
 
 export class {{clientName}} {
-    call<T extends keyof {{packageName}}.{{serviceName}},
-            R = ReturnType<{{packageName}}.{{serviceName}}[T]>>
-        (name: T, body: FirstArgument<{{packageName}}.{{serviceName}}[T]>, token?: string): Observable<R> {
     private baseURL: string = "";
 
     constructor(baseURL: string) {
         this.baseURL = baseURL;
     }
 
-    call<T extends keyof {{serviceName}},
-            R = ReturnType<{{serviceName}}[T]>>
-        (name: T, body: FirstArgument<{{serviceName}}[T]>, token?: string): Observable<R> {
+    call<T extends keyof {{packageName}}.{{serviceName}},
+            R = ReturnType<{{packageName}}.{{serviceName}}[T]>>
+        (name: T, body: FirstArgument<{{packageName}}.{{serviceName}}[T]>, token?: string): Observable<R> {
             let options = {};
             if(token !== undefined) {
                 options = { headers: { Authorization: token } };
